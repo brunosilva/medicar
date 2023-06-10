@@ -18,8 +18,8 @@ export default function Register() {
         <Input type="password" name="confirmPassword" placeholder="Confirmar Senha" />
       </Field>
       <FormAction>
-        <Button>Cancelar</Button>
-        <Button>Confirmar</Button>
+        <Button color="transparent">Cancelar</Button>
+        <Button color="green">Confirmar</Button>
       </FormAction>
     </Form>
   )

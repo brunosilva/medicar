@@ -32,20 +32,20 @@ export default function NewAppointment() {
   return (
     <Form title="Nova consulta">
       <Field>
-        <Dropdown name="especialidade" placeholder="Especialidade" data={specialties} onChange={handleDoctor} />
+        <Dropdown name="especialidade" placeholder="Especialidade" data={specialties} onChange={handleDoctor} typeValue="nome" />
       </Field>
       <Field>
-        <Dropdown name="medico" placeholder="Médico" data={doctors} onChange={((value) => handleDate(value))} />
+        <Dropdown name="medico" placeholder="Médico" data={doctors} onChange={((value) => handleDate(value))} typeValue="nome" />
       </Field>
       <Field>
-        {/* <Dropdown name="data" placeholder="Data" /> */}
+        <Dropdown name="data" placeholder="Data" data={calendar} onChange={((value) => handleDate(value))} typeValue="data" />
       </Field>
       <Field>
-        {/* <Dropdown name="hora" placeholder="Hora" /> */}
+        <Dropdown name="hora" placeholder="Hora" data={calendar} onChange={((value) => handleDate(value))} typeValue="hora"  />
       </Field>
       <FormAction>
-        <Button>Cancelar</Button>
-        <Button>Confirmar</Button>
+        <Button color="transparent">Cancelar</Button>
+        <Button color="green">Confirmar</Button>
       </FormAction>
 
     </Form>

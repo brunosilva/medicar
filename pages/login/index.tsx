@@ -12,8 +12,8 @@ export default function Login() {
         <Input type="password" name="password" placeholder="Senha" />
       </Field>
       <FormAction>
-        <Button>Criar Conta</Button>
-        <Button>Acessar</Button>
+        <Button color="transparent">Criar Conta</Button>
+        <Button color="green">Acessar</Button>
       </FormAction>
     </Form>
   )
