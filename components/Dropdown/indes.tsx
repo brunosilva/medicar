@@ -12,14 +12,14 @@ interface IProps {
   placeholder: string;
   name: string;
   onChange: (id: string) => void;
+  typeValue: 'nome' | 'data' | 'hora';
 }
-export default function Dropdown<IProps>({data, placeholder, name, onChange}) {
-
+export default function Dropdown<IProps>({data, placeholder, name, onChange, typeValue}) {
   return (
     <Select name={name} placeholder={placeholder} onChange={(e) => onChange(e.target.value)}>
       <Option>{placeholder}</Option>
       {data?.map((item, index) =>
-        <Option key={index} value={item.id}>{item.nome}</Option>
+        <Option key={index} value={item.id}>{typeValue === 'nome' ? item.nome : typeValue === 'data' ? item.dia : item?.horarios?.map((hora, index) => `${hora}`)}</Option>
       )}
     </Select>
   )
