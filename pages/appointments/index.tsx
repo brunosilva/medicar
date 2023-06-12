@@ -1,5 +1,7 @@
+import Table from "../../components/Table";
+
 export default function Appointments() {
   return (
-    <h1>Consultas clinica</h1>
+    <Table />
   )
 }
