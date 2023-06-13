@@ -6,6 +6,8 @@ export const Button = styled('button', {
   padding: '9px 38px',
   cursor: 'pointer',
   fontSize: 18,
+  display: 'flex',
+  alignItems: 'center',
 
   span: {
     fontWeight: 'bold',
