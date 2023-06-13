@@ -1,6 +1,6 @@
 import { styled } from "@stitches/react";
 
-export const Title = styled('div', {
+export const TitleSection = styled('div', {
   fontStyle: 'normal',
   fontWeight: 700,
   fontSize: '18px',
@@ -10,6 +10,4 @@ export const Title = styled('div', {
   alignItems: 'center',
 
   color: '$black',
-
-  marginBottom: 20,
 })

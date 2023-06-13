@@ -1,4 +1,4 @@
-import { Title } from '../Title/style';
+import { TitleSection } from '../Title/style';
 import { FormContainer } from './style';
 
 interface IProps {
@@ -9,7 +9,7 @@ interface IProps {
 export default function Form<IProps>({title, children}) {
   return (
     <>
-      <Title>{title && title}</Title>
+      <TitleSection>{title && title}</TitleSection>
       <FormContainer>
         {children}
       </FormContainer>
