@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { useCallback } from "react";
 import { Button } from "../../components/Button";
 import Dropdown from "../../components/Dropdown/indes";
@@ -8,6 +9,8 @@ import useGetDoctors from "./hooks/useGetDoctors";
 import useGetSpecialties from "./hooks/useGetSpecialties";
 
 export default function NewAppointment() {
+  const route = useRouter();
+
   const {
     specialties
   } = useGetSpecialties()
@@ -44,10 +47,9 @@ export default function NewAppointment() {
         <Dropdown name="hora" placeholder="Hora" data={calendar} onChange={((value) => handleDate(value))} typeValue="hora"  />
       </Field>
       <FormAction>
-        <Button color="transparent">Cancelar</Button>
-        <Button color="green">Confirmar</Button>
+        <Button color="transparent" onClick={() => route.push('/appointments')}>Cancelar</Button>
+        <Button color="green" onClick={() => route.push('/appointments')}>Confirmar</Button>
       </FormAction>
-
     </Form>
   )
 }
