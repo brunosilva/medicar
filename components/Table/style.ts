@@ -1,11 +1,13 @@
 import { styled } from "@stitches/react";
 
 export const TableComponent = styled('table', {
-  width: '100%',
+  minWidth: '850px',
+  maxWidth: '1000px',
+  padding: '10px',
 })
 
 export const TR = styled('tr', {
-
+  height: '45px',
 })
 export const TH = styled('th', {
   textTransform: 'uppercase',

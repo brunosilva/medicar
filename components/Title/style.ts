@@ -5,6 +5,7 @@ export const TitleSection = styled('div', {
   fontWeight: 700,
   fontSize: '18px',
   lineHeight: '21px',
+  marginBottom: '20px',
 
   display: 'flex',
   alignItems: 'center',
