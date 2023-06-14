@@ -1,9 +1,12 @@
+import { useRouter } from 'next/router';
 import { Button } from "../../components/Button";
 import Form from "../../components/Form";
 import { Field, FormAction, Input } from "../../components/Form/style";
 import Icon from "../../components/Icon";
 
 export default function Login() {
+  const route = useRouter();
+
   return (
     <Form title="">
       <Field>
@@ -13,10 +16,8 @@ export default function Login() {
         <Input type="password" name="password" placeholder="Senha" />
       </Field>
       <FormAction>
-        <Button color="transparent">Criar Conta</Button>
-        <Button color="green"><Icon model="plus" />Acessar</Button>
-        {/* <Button color="transparent" onClick={() => navigate('/register')}>Criar Conta</Button>
-        <Button color="green" onClick={() => navigate('/new')}><Icon model="plus" />Acessar</Button> */}
+        <Button color="transparent" onClick={() => route.push('/register')}>Criar Conta</Button>
+        <Button color="green" onClick={() => route.push('/appointments')}><Icon model="plus" />Acessar</Button>
       </FormAction>
     </Form>
   )
