@@ -8,11 +8,11 @@ interface IProps {
 
 export default function Form<IProps>({title, children}) {
   return (
-    <>
-      <TitleSection>{title && title}</TitleSection>
-      <FormContainer>
+    <FormContainer>
+      <>
+        <TitleSection>{title && title}</TitleSection>
         {children}
-      </FormContainer>
-    </>
+      </>
+    </FormContainer>
   )
 }
