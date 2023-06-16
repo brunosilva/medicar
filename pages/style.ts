@@ -7,3 +7,17 @@ export const ContainerApp = styled('div', {
 
   height: '100vh',
 })
+
+export const RowLogo = styled('div', {
+  variants: {
+    margin: {
+      medium: {
+        marginBottom: '17px',
+      },
+      large: {
+        marginBottom: '40px',
+      }
+
+    }
+  }
+})
