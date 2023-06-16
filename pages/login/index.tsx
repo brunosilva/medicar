@@ -4,14 +4,15 @@ import Form from "../../components/Form";
 import { Field, FormAction, Input } from "../../components/Form/style";
 import Icon from "../../components/Icon";
 import Logo from '../../components/Logo';
+import { ContainerLogo } from '../../components/Logo/style';
 
 export default function Login() {
   const route = useRouter();
 
   return (
-    <>
+    <ContainerLogo>
+      <Logo />
       <Form title="">
-        <Logo />
         <Field>
           <Input type="text" name="login" placeholder="Email ou login" />
         </Field>
@@ -23,6 +24,6 @@ export default function Login() {
           <Button color="green" onClick={() => route.push('/appointments')}><Icon model="plus" />Acessar</Button>
         </FormAction>
       </Form>
-    </>
+    </ContainerLogo>
   )
 }
