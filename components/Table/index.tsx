@@ -1,11 +1,13 @@
 
+import { IAppomtments } from "../../pages/appointments/hooks/type";
 import { Button } from "../Button";
 import Icon from "../Icon";
-import { mockDataAppointments } from "./mock";
 import { TableComponent, TH, TR } from "./style";
 
-
-export default function Table() {
+interface IProps {
+  data: IAppomtments[]
+}
+export default function Table<IProps>({data}) {
   return (
     <TableComponent>
       <thead>
@@ -18,13 +20,13 @@ export default function Table() {
         </TR>
       </thead>
       <tbody>
-        {mockDataAppointments.map((item) => {
+        {data.map((item) => {
           return (
             <TR key={item.id}>
-              <td>{item.medico.especialidade.nome}</td>
-              <td>{item.medico.nome}</td>
-              <td>{item.dia}</td>
-              <td>{item.horario}</td>
+              <td>{item?.medico?.especialidade.nome}</td>
+              <td>{item?.medico?.nome}</td>
+              <td>{item?.dia}</td>
+              <td>{item?.horario}</td>
               <td><Button color="transparent"><Icon model="close" /> Desmarcar</Button></td>
             </TR>
           )
