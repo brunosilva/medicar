@@ -1,12 +1,6 @@
 import { Option, Select } from "./style";
 import { IOption } from "./type";
 
-// interface IOptions {
-//   key: string;
-//   text: string;
-//   value: string;
-// }
-
 interface IProps {
   data: IOption[];
   placeholder: string;
@@ -19,7 +13,6 @@ export default function Dropdown<IProps>({data, placeholder, name, onChange}) {
       <Option>{placeholder}</Option>
       {data?.map((item) =>
         <Option key={item?.key} value={item?.value}>{item?.text}</Option>
-        // <Option key={item.key} value={item.value}>{typeValue === 'nome' ? item.nome : typeValue === 'data' ? item.dia : item?.horarios?.map((hora, index) => `${hora}`)}</Option>
       )}
     </Select>
   )

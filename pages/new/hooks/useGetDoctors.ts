@@ -11,20 +11,6 @@ const useGetDoctors = () => {
     });
   }, []);
 
-  // const getDoctorBySpecialties = useCallback(
-  //   async (id: string) => {
-  //     const response = api.get<IDoctors[]>(`/doctors`).then(response => {
-  //     });
-
-  //     console.log("especialties", response)
-  //     // const formatResponse = response?.data?.reduce((acc, obj) => obj.specialidade.id === id)
-  //     // setCalendar(response);
-  //     return
-  //   },
-  //   []
-  // )
-
-
   return {
     doctors: doctors,
   }

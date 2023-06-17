@@ -11,19 +11,7 @@ const useGetCalendar = () => {
     });
   }, []);
 
-  const getCalendarByDoctor = useCallback(
-    async (id: string) => {
-      const response = api.get<ICalendar[]>(`/calendar`).then(response => {
-      });
-
-      // setCalendar(response);
-      return
-    },
-    []
-  )
-
   return {
-    getCalendarByDoctor: async(id: string) => [{}],
     calendar: calendar,
   }
 }
