@@ -1,12 +1,13 @@
-import moment from "moment";
+import { Form, Formik } from "formik";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { Button } from "../../components/Button";
 import Dropdown from "../../components/Dropdown/indes";
-import Form from "../../components/Form";
+import FormComponentStyle from "../../components/Form";
 import { Field, FormAction } from "../../components/Form/style";
 import Logo from "../../components/Logo";
 import { RowLogo } from "../style";
+import { formatDate, formatDoctor, formatHour, formatSpecialties } from "./functions";
 import { ICalendar, IDoctors } from "./hooks/type";
 import useGetCalendar from "./hooks/useGetCalendar";
 import useGetDoctors from "./hooks/useGetDoctors";
@@ -29,120 +30,88 @@ export default function NewAppointment() {
   } = useGetDoctors()
 
   const {
-    getCalendarByDoctor,
     calendar
   } = useGetCalendar()
 
-  const formatSpecialties = (data) => {
-    return (
-      data?.map((item) => ({
-        text: item.nome,
-        value: item.nome,
-        key: item.id
-      }))
-    )
-  }
-
-  const formatDoctor = (data) => {
-    return (
-      data?.map((item) => ({
-        text: item.nome,
-        value: item.nome,
-        key: item.id
-      }))
-    )
-  }
-
-  const formatDate = (data) => {
-    return (
-      data?.dia?.map((item) => ({
-        text: moment(item?.value).format("dddd, MMMM Do YYYY"),
-        value: item?.id,
-        key: item?.id
-      }))
-    )
-  }
-
-  // const formatHours = (data) => {
-  //   // console.log("formatCalendar", data)
-
-  //     // return (
-  //       //   data?.map((item) => )
-  //       // )
-  // }
-
-  const handleDoctor = (value) => {
+  const handleDoctor = (value: string) => {
     const doctorsBySpecialties = doctors?.filter((item: IDoctors) => item?.especialidade?.nome === value)
     return formatDoctor(doctorsBySpecialties)
   }
 
-  const handleDate = (value) => {
+  const handleDate = useCallback((value: string) => {
     const dateByDoctor = calendar?.find((item: ICalendar) => item?.medico?.nome === value)
     return formatDate(dateByDoctor)
-  }
+  }, [calendar]);
 
-  const handleHour = (value) => {
-    console.log("dateSelected", dateSelected);
-    console.log("handleHour", value);
-    // const hourByDate = calendar?.find((item: ICalendar) => item?.medico?.nome === value)
-    // return formatDate(dateByDoctor)
-  }
+  const handleHour = useCallback((value: number) => {
+    const hourByDate = calendar?.find((item: ICalendar) => item?.horarios?.filter((d) => d?.day === value))
+      return formatHour(hourByDate)
+  }, [calendar]);
 
-  // const handleHours = (data) => {
-  //   console.log("handleCalendar", data)
-  //   return (
-  //     data?.horarios?.map((item, index) => ({
-  //       text: item,
-  //       value: index,
-  //       key: index
-  //     }))
-  //   )
-  // }
+  const handleSubmit = useCallback((value) => {
+    console.log("submit values form", value)
 
+    // if (value) route.push('/appointments')
+  }, []);
 
   return (
     <ContainerNew>
       <RowLogo margin="large">
         <Logo />
       </RowLogo>
-      <Form title="Nova consulta">
-        <Field>
-          <Dropdown
-            name="especialidade"
-            placeholder="Especialidade"
-            data={formatSpecialties(specialties)}
-            onChange={(value: string) => setSpecialtiesSelected(value)}
-          />
-        </Field>
-        <Field>
-          <Dropdown
-            name="medico"
-            placeholder="Médico"
-            data={handleDoctor(specialtiesSelected)}
-            onChange={((value: string) => setDoctorSelected(value))}
-          />
-        </Field>
-        <Field>
-          <Dropdown
-            name="data"
-            placeholder="Data"
-            data={handleDate(doctorSelected)}
-            onChange={((value) => setDateSelected(value))}
-          />
-        </Field>
-        <Field>
-          <Dropdown
-            name="hora"
-            placeholder="Hora"
-            data={handleHour(dateSelected)}
-            onChange={((value) => handleDate(value))}
-          />
-        </Field>
-        <FormAction>
-          <Button color="transparent" onClick={() => route.push('/appointments')}>Cancelar</Button>
-          <Button color="green" onClick={() => route.push('/appointments')}>Confirmar</Button>
-        </FormAction>
-      </Form>
+      <FormComponentStyle title="Nova consulta" >
+          <Formik
+            initialValues={{specialties: '', doctor: '', date: '', hour: ''}}
+            onSubmit={(values) => {
+              console.log(values);
+            }}
+          >
+            {({ values, handleSubmit }) => (
+            <Form onSubmit={handleSubmit}>
+              <Field>
+                <Dropdown
+                  name="specialties"
+                  placeholder="Especialidade"
+                  value={values.specialties}
+                  data={formatSpecialties(specialties)}
+                  onChange={(value: string) => setSpecialtiesSelected(value)}
+                />
+              </Field>
+              <Field>
+                <Dropdown
+                  name="doctor"
+                  placeholder="Médico"
+                  value={values.doctor}
+                  data={handleDoctor(specialtiesSelected)}
+                  onChange={((value: string) => setDoctorSelected(value))}
+                />
+              </Field>
+              <Field>
+                <Dropdown
+                  name="date"
+                  placeholder="Data"
+                  value={values.date}
+                  data={handleDate(doctorSelected)}
+                  onChange={((value) => setDateSelected(value))}
+                />
+              </Field>
+              <Field>
+                <Dropdown
+                  name="hour"
+                  placeholder="Hora"
+                  value={values.hour}
+                  data={ handleHour(dateSelected as unknown as number)}
+                  onChange={((value) => console.log("Hora selecionada", value))}
+                />
+              </Field>
+              <FormAction>
+                <Button color="transparent" onClick={() => route.push('/appointments')}>Cancelar</Button>
+                <Button color="green" type="submit">Confirmar</Button>
+              </FormAction>
+            </Form>
+          )}
+        </Formik>
+      </FormComponentStyle>
     </ContainerNew>
   )
 }

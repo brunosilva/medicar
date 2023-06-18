@@ -15,6 +15,7 @@ export interface IDoctors {
 
 export interface IHours {
   id: number,
+  day: number,
   value: string
 }
 
@@ -33,3 +34,9 @@ export interface ICalendar {
   horarios: IHours[]
 }
 
+export interface IAppointmentDate {
+  specialties: string,
+  doctor: string,
+  date: string,
+  hour: string,
+}
