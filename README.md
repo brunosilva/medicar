@@ -1,34 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Este é um projeto [Next.js](https://nextjs.org/).
 
-## Getting Started
+## Início
 
-First, run the development server:
+Após clonar o projeto e instalar as dependencias ```npm install```, abra dois terminais e execute os comandos abaixo para rodar o projeto.
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+# and
+npm run server
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Login
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Ao iniciar, abrira direto na tela de login.
+![login](https://github.com/brunosilva/medicar/issues/1#issue-1762509326)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+### Botão "Criar Conta"
 
-To learn more about Next.js, take a look at the following resources:
+Vai para tela onde permitirá criar uma nova conta.
+![criar_conta](https://github.com/brunosilva/medicar/issues/2#issue-1762509411)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Botão "Confirmar"
 
-## Deploy on Vercel
+Irá redirecionar para a lista de consultas, onde tem um botão "Nova Consulta" que redireciona para o formulário.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![tabela](https://github.com/brunosilva/medicar/issues/4#issue-1762509625)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Botão "Nova Consulta"
+
+No botão "Nova Consulta", será redirecionado para a tela de formulário com informações para agendar uma nova consulta.
+![nova_consulta](https://github.com/brunosilva/medicar/issues/3#issue-1762509524)
+

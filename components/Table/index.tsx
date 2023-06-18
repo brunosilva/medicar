@@ -1,4 +1,5 @@
 
+import moment from "moment";
 import { IAppomtments } from "../../pages/appointments/hooks/type";
 import { Button } from "../Button";
 import Icon from "../Icon";
@@ -25,7 +26,7 @@ export default function Table<IProps>({data}) {
             <TR key={item.id}>
               <td>{item?.medico?.especialidade.nome}</td>
               <td>{item?.medico?.nome}</td>
-              <td>{item?.dia}</td>
+              <td>{moment(item?.dia).format("DD/MM/YYYY")}</td>
               <td>{item?.horario}</td>
               <td><Button color="transparent"><Icon model="close" /> Desmarcar</Button></td>
             </TR>
