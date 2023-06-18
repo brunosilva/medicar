@@ -13,7 +13,7 @@ npm run server
 ### Login
 
 Ao iniciar, abrira direto na tela de login.
-![login](https://github.com/brunosilva/medicar/issues/1#issue-1762509326)
+https://github.com/brunosilva/medicar/issues/1#issue-1762509326
 
 
 ### Botão "Criar Conta"
