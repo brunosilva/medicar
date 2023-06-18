@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { Button } from "../../components/Button";
-import Form from "../../components/Form";
+import FormComponentStyle from "../../components/Form";
 import { Field, FormAction, Input } from "../../components/Form/style";
 import Icon from "../../components/Icon";
 import Logo from '../../components/Logo';
@@ -12,7 +12,7 @@ export default function Login() {
   return (
     <ContainerLogo>
       <Logo />
-      <Form title="">
+      <FormComponentStyle title="">
         <Field>
           <Input type="text" name="login" placeholder="Email ou login" />
         </Field>
@@ -23,7 +23,7 @@ export default function Login() {
           <Button color="transparent" onClick={() => route.push('/register')}>Criar Conta</Button>
           <Button color="green" onClick={() => route.push('/appointments')}><Icon model="plus" />Acessar</Button>
         </FormAction>
-      </Form>
+      </FormComponentStyle>
     </ContainerLogo>
   )
 }
