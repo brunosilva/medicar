@@ -13,4 +13,18 @@ export const Option = styled('option', {
   width: '100%',
   height: '40px',
   background: '$white',
+  color: '$gray',
+
+  variants:{
+    colors: {
+      placeholder: {
+        padding: '10px',
+        color: '$gray'
+      },
+      data: {
+        padding: '10px',
+        color: '$black'
+      },
+    },
+  }
 })

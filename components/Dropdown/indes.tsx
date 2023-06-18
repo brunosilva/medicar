@@ -5,14 +5,15 @@ interface IProps {
   data: IOption[];
   placeholder: string;
   name: string;
+  value: string;
   onChange: (id: string) => void;
 }
-export default function Dropdown<IProps>({data, placeholder, name, onChange}) {
+export default function Dropdown<IProps>({data, placeholder, value, name, onChange}) {
   return (
     <Select name={name} placeholder={placeholder} onChange={(e) => onChange(e.target.value)}>
-      <Option>{placeholder}</Option>
+      <Option colors={"placeholder"}>{placeholder}</Option>
       {data?.map((item) =>
-        <Option key={item?.key} value={item?.value}>{item?.text}</Option>
+        <Option colors={"data"} key={item?.key} value={item?.value}>{item?.text}</Option>
       )}
     </Select>
   )
