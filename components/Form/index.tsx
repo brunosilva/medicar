@@ -3,16 +3,14 @@ import { FormContainer } from './style';
 
 interface IProps {
   title?: string | undefined;
-  children: JSX.Element
+  children: JSX.Element;
 }
 
-export default function Form<IProps>({title, children}) {
+export default function FormComponentStyle<IProps>({title, children}) {
   return (
     <FormContainer>
-      <>
-        <TitleSection>{title && title}</TitleSection>
-        {children}
-      </>
+      <TitleSection>{title && title}</TitleSection>
+      {children}
     </FormContainer>
   )
 }
