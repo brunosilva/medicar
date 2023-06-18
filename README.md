@@ -13,23 +13,23 @@ npm run server
 ### Login
 
 Ao iniciar, abrira direto na tela de login.
-https://github.com/brunosilva/medicar/issues/1#issue-1762509326
+![login]https://github.com/brunosilva/medicar/blob/cade5b211bc502c2d2fd2aa2d51a3557b3b274eb/assets/images/login.png
 
 
 ### Botão "Criar Conta"
 
 Vai para tela onde permitirá criar uma nova conta.
-![criar_conta](https://github.com/brunosilva/medicar/issues/2#issue-1762509411)
+![criar_conta](https://github.com/brunosilva/medicar/blob/cade5b211bc502c2d2fd2aa2d51a3557b3b274eb/assets/images/criar_conta.png)
 
 
 ### Botão "Confirmar"
 
 Irá redirecionar para a lista de consultas, onde tem um botão "Nova Consulta" que redireciona para o formulário.
 
-![tabela](https://github.com/brunosilva/medicar/issues/4#issue-1762509625)
+![tabela](https://github.com/brunosilva/medicar/blob/cade5b211bc502c2d2fd2aa2d51a3557b3b274eb/assets/images/tabela.png)
 
 ### Botão "Nova Consulta"
 
 No botão "Nova Consulta", será redirecionado para a tela de formulário com informações para agendar uma nova consulta.
-![nova_consulta](https://github.com/brunosilva/medicar/issues/3#issue-1762509524)
+![nova_consulta](https://github.com/brunosilva/medicar/blob/cade5b211bc502c2d2fd2aa2d51a3557b3b274eb/assets/images/nova_consulta.png)
 
