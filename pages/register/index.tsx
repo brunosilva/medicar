@@ -1,8 +1,13 @@
+// package
 import { useRouter } from "next/router";
+
+// component
 import { Button } from "../../components/Button";
 import Form from "../../components/Form";
-import { Field, FormAction, Input } from "../../components/Form/style";
 import Logo from "../../components/Logo";
+
+// style
+import { Field, FormAction, Input } from "../../components/Form/style";
 import { RowLogo } from "../style";
 import { ContainerRegister } from "./style";
 

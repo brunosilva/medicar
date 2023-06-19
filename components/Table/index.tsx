@@ -1,8 +1,15 @@
 
+// package
 import moment from "moment";
+
+// hooks
 import { IAppomtments } from "../../pages/appointments/hooks/type";
+
+// components
 import { Button } from "../Button";
 import Icon from "../Icon";
+
+// style
 import { TableComponent, TH, TR } from "./style";
 
 interface IProps {

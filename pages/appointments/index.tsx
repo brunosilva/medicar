@@ -1,10 +1,17 @@
+// package
 import { useRouter } from "next/router";
+
+// hooks
+import useGetAppointments from "./hooks/useGetAppointments";
+
+// component
 import { Button } from "../../components/Button";
 import Icon from "../../components/Icon";
 import Logo from "../../components/Logo";
 import Table from "../../components/Table";
+
+// style
 import { TitleSection } from "../../components/Title/style";
-import useGetAppointments from "./hooks/useGetAppointments";
 import { ContainerAppointments, Content, HeaderAppointments, LoginButtons, Row } from "./style";
 
 export default function Appointments() {

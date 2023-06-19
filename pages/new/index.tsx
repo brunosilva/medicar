@@ -1,17 +1,26 @@
-import { Form, Formik } from "formik";
-import { useRouter } from "next/router";
+// package
 import { useCallback, useState } from "react";
+import { useRouter } from "next/router";
+import { Form, Formik } from "formik";
+
+// component
 import { Button } from "../../components/Button";
 import Dropdown from "../../components/Dropdown/indes";
 import FormComponentStyle from "../../components/Form";
-import { Field, FormAction } from "../../components/Form/style";
 import Logo from "../../components/Logo";
-import { RowLogo } from "../style";
+
+// function
 import { formatDate, formatDoctor, formatHour, formatSpecialties } from "./functions";
 import { ICalendar, IDoctors } from "./hooks/type";
+
+// hooks
 import useGetCalendar from "./hooks/useGetCalendar";
 import useGetDoctors from "./hooks/useGetDoctors";
 import useGetSpecialties from "./hooks/useGetSpecialties";
+
+// style
+import { Field, FormAction } from "../../components/Form/style";
+import { RowLogo } from "../style";
 import { ContainerNew } from "./style";
 
 export default function NewAppointment() {

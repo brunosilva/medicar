@@ -1,4 +1,7 @@
+// component
 import { TitleSection } from '../Title/style';
+
+// style
 import { FormContainer } from './style';
 
 interface IProps {

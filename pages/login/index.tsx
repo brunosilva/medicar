@@ -1,9 +1,14 @@
+// package
 import { useRouter } from 'next/router';
+
+// component
 import { Button } from "../../components/Button";
 import FormComponentStyle from "../../components/Form";
-import { Field, FormAction, Input } from "../../components/Form/style";
 import Icon from "../../components/Icon";
 import Logo from '../../components/Logo';
+
+// style
+import { Field, FormAction, Input } from "../../components/Form/style";
 import { ContainerLogo } from '../../components/Logo/style';
 
 export default function Login() {

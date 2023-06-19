@@ -1,5 +1,8 @@
-import { Option, Select } from "./style";
+// type
 import { IOption } from "./type";
+
+// style
+import { Option, Select } from "./style";
 
 interface IProps {
   data: IOption[];
