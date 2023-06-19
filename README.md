@@ -20,6 +20,7 @@ Ao iniciar, abrira direto na tela de login.
 ### Botão "Criar Conta"
 
 Vai para tela onde permitirá criar uma nova conta.
+
 ![criar_conta](https://github.com/brunosilva/medicar/blob/cade5b211bc502c2d2fd2aa2d51a3557b3b274eb/assets/images/criar_conta.png)
 
 
@@ -32,5 +33,6 @@ Irá redirecionar para a lista de consultas, onde tem um botão "Nova Consulta" 
 ### Botão "Nova Consulta"
 
 No botão "Nova Consulta", será redirecionado para a tela de formulário com informações para agendar uma nova consulta.
+
 ![nova_consulta](https://github.com/brunosilva/medicar/blob/cade5b211bc502c2d2fd2aa2d51a3557b3b274eb/assets/images/nova_consulta.png)
 
